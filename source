@@ -24,7 +24,8 @@ local Close = Instance.new("TextButton")
 --Properties:
 
 G.Name = "G"
-G.Parent = game.CoreGui
+G.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+G.Enabled = true
 G.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Top.Name = "Top"
@@ -176,7 +177,7 @@ Close.TextWrapped = true
 
 -- Scripts:
 
-local function QUMVCNL_fake_script() -- Bar.Rainbow Frame 
+local function UFNWC_fake_script() -- Bar.Rainbow Frame 
 	local script = Instance.new('LocalScript', Bar)
 
 	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
@@ -190,16 +191,16 @@ local function QUMVCNL_fake_script() -- Bar.Rainbow Frame
 	end
 	
 end
-coroutine.wrap(QUMVCNL_fake_script)()
-local function ZEGCW_fake_script() -- SavePlace.LocalScript 
+coroutine.wrap(UFNWC_fake_script)()
+local function JQSLNG_fake_script() -- SavePlace.LocalScript 
 	local script = Instance.new('LocalScript', SavePlace)
 
 	SavePlace.MouseButton1Click:Connect(function()
 		saveinstance()
 	end)
 end
-coroutine.wrap(ZEGCW_fake_script)()
-local function XIJLJA_fake_script() -- Rspy.LocalScript 
+coroutine.wrap(JQSLNG_fake_script)()
+local function JYTPJDK_fake_script() -- Rspy.LocalScript 
 	local script = Instance.new('LocalScript', Rspy)
 
 	
@@ -208,8 +209,8 @@ local function XIJLJA_fake_script() -- Rspy.LocalScript
 		loadstring(game:HttpGet("https://gist.githubusercontent.com/luatsuki/c75a272fb67bccc22bd1b6add92ee267/raw/56375f8536aeca0cc84b44032312efb0fa5b7fa0/Spy"))()
 	end)
 end
-coroutine.wrap(XIJLJA_fake_script)()
-local function XFGRNF_fake_script() -- Tab1.LocalScript 
+coroutine.wrap(JYTPJDK_fake_script)()
+local function WPHAO_fake_script() -- Tab1.LocalScript 
 	local script = Instance.new('LocalScript', Tab1)
 
 	Tab1.MouseButton1Click:Connect(function()
@@ -217,8 +218,8 @@ local function XFGRNF_fake_script() -- Tab1.LocalScript
 		TabFrame2.Visible = false
 	end)
 end
-coroutine.wrap(XFGRNF_fake_script)()
-local function KEKXTVC_fake_script() -- Tab2.LocalScript 
+coroutine.wrap(WPHAO_fake_script)()
+local function ROSQ_fake_script() -- Tab2.LocalScript 
 	local script = Instance.new('LocalScript', Tab2)
 
 	Tab2.MouseButton1Click:Connect(function()
@@ -226,16 +227,16 @@ local function KEKXTVC_fake_script() -- Tab2.LocalScript
 		TabFrame2.Visible = true
 	end)
 end
-coroutine.wrap(KEKXTVC_fake_script)()
-local function NMOF_fake_script() -- Goto.LocalScript 
+coroutine.wrap(ROSQ_fake_script)()
+local function KSHOSE_fake_script() -- Goto.LocalScript 
 	local script = Instance.new('LocalScript', Goto)
 
 	Goto.MouseButton1Click:Connect(function()
-		game.Players.LocalPlayer.Character:MoveTo(game.Workspace.PlayerBox.Text.HumanoidRootPart.Position)
+		game.Players.LocalPlayer.Character:MoveTo(game.Players:FindFirstChild(PlayerBox.Text).Character.HumanoidRootPart.Position)
 	end)
 end
-coroutine.wrap(NMOF_fake_script)()
-local function TMEYAV_fake_script() -- Top.Dragify 
+coroutine.wrap(KSHOSE_fake_script)()
+local function YQBSEB_fake_script() -- Top.Dragify 
 	local script = Instance.new('LocalScript', Top)
 
 	local UIS = game:GetService("UserInputService")
@@ -276,12 +277,12 @@ local function TMEYAV_fake_script() -- Top.Dragify
 	
 	dragify(Top)
 end
-coroutine.wrap(TMEYAV_fake_script)()
-local function MAVEDQ_fake_script() -- Close.LocalScript 
+coroutine.wrap(YQBSEB_fake_script)()
+local function NHWAVG_fake_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	Close.MouseButton1Click:Connect(function()
 		G:Destroy()
 	end)
 end
-coroutine.wrap(MAVEDQ_fake_script)()
+coroutine.wrap(NHWAVG_fake_script)()
