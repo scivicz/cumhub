@@ -1,0 +1,255 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local G = Instance.new("ScreenGui")
+local Top = Instance.new("Frame")
+local Bar = Instance.new("Frame")
+local Main = Instance.new("Frame")
+local Container = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local SavePlace = Instance.new("TextButton")
+local Headless = Instance.new("TextButton")
+local Rspy = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+
+--Properties:
+
+G.Name = "G"
+G.Parent = game.CoreGui
+G.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Top.Name = "Top"
+Top.Parent = G
+Top.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+Top.BorderSizePixel = 0
+Top.Position = UDim2.new(0.172719941, 0, 0.278527617, 0)
+Top.Size = UDim2.new(0, 414, 0, 21)
+
+Bar.Name = "Bar"
+Bar.Parent = Top
+Bar.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0, 0, 1, 0)
+Bar.Size = UDim2.new(0, 414, 0, 2)
+
+Main.Name = "Main"
+Main.Parent = Bar
+Main.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(-0.000428056956, 0, 0.567660451, 0)
+Main.Size = UDim2.new(0, 414, 0, 176)
+
+Container.Name = "Container"
+Container.Parent = Main
+Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Container.BackgroundTransparency = 1.000
+Container.Position = UDim2.new(0.0289855078, 0, 0.0852272734, 0)
+Container.Size = UDim2.new(0, 389, 0, 146)
+
+UIGridLayout.Parent = Container
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 100, 0, 25)
+
+SavePlace.Name = "SavePlace"
+SavePlace.Parent = Container
+SavePlace.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+SavePlace.BorderSizePixel = 0
+SavePlace.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
+SavePlace.Size = UDim2.new(0, 94, 0, 25)
+SavePlace.Font = Enum.Font.SourceSansBold
+SavePlace.Text = "Save Game"
+SavePlace.TextColor3 = Color3.fromRGB(255, 255, 255)
+SavePlace.TextSize = 20.000
+SavePlace.TextWrapped = true
+
+Headless.Name = "Headless"
+Headless.Parent = Container
+Headless.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Headless.BorderSizePixel = 0
+Headless.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
+Headless.Size = UDim2.new(0, 94, 0, 25)
+Headless.Font = Enum.Font.SourceSansBold
+Headless.Text = "Headless"
+Headless.TextColor3 = Color3.fromRGB(255, 255, 255)
+Headless.TextSize = 20.000
+Headless.TextWrapped = true
+
+Rspy.Name = "Rspy"
+Rspy.Parent = Container
+Rspy.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Rspy.BorderSizePixel = 0
+Rspy.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
+Rspy.Size = UDim2.new(0, 94, 0, 25)
+Rspy.Font = Enum.Font.SourceSansBold
+Rspy.Text = "Rspy"
+Rspy.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rspy.TextSize = 20.000
+Rspy.TextWrapped = true
+
+TextLabel.Parent = Top
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0144927539, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 125, 0, 20)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "cum hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+Close.Name = "Close"
+Close.Parent = Top
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.958937228, 0, 0.0511365645, 0)
+Close.Size = UDim2.new(0, 16, 0, 16)
+Close.Font = Enum.Font.SourceSansBold
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 20.000
+Close.TextWrapped = true
+
+-- Scripts:
+
+local function XCXOBO_fake_script() -- Bar.Rainbow Frame 
+	local script = Instance.new('LocalScript', Bar)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.1)do
+	 Bar.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+	
+end
+coroutine.wrap(XCXOBO_fake_script)()
+local function DGGMFX_fake_script() -- SavePlace.LocalScript 
+	local script = Instance.new('LocalScript', SavePlace)
+
+	SavePlace.MouseButton1Click:Connect(function()
+		saveinstance()
+	end)
+end
+coroutine.wrap(DGGMFX_fake_script)()
+local function KKEITND_fake_script() -- Headless.LocalScript 
+	local script = Instance.new('LocalScript', Headless)
+
+	Headless.MouseButton1Click:Connect(function()
+		if sethidden then
+			
+			local lplr = Players.LocalPlayer
+			local char = lplr.Character
+			local rig = tostring(char.Humanoid.RigType) == "Enum.HumanoidRigType.R6" and 1 or tostring(char.Humanoid.RigType) == "Enum.HumanoidRigType.R15" and 2
+	
+			local speaker = Players.LocalPlayer
+	
+			sethidden(speaker, "SimulationRadius", math.huge)
+	
+			local test = Instance.new("Model")
+			local hum  = Instance.new("Humanoid")
+			local animation = Instance.new("Model")
+			local humanoidanimation = Instance.new("Humanoid")
+			test.Parent = workspace
+			hum.Parent = test
+			animation.Parent = workspace
+			humanoidanimation.Parent = animation
+	
+			lplr.Character = test
+			wait(2)
+			char.Humanoid.Animator.Parent = humanoidanimation
+			char.Humanoid:Destroy()
+	
+			char.Head:Destroy()
+			wait(5)
+			game.Players.LocalPlayer.Character = char
+	
+			local hum2 = Instance.new("Humanoid")
+			hum2.Parent = char
+			char:FindFirstChildOfClass("Humanoid").Jump = true
+	
+			humanoidanimation.Animator.Parent = hum2
+			char.Animate.Disabled = true
+			wait()
+			char.Animate.Disabled = false
+			wait()
+	
+			if rig == 1 then
+				hum2.HipHeight = 0
+			elseif rig == 2 then
+				hum2.HipHeight = 2.19
+			end
+		else
+			game.StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "Your exploit does not support this command"; 
+				Duration = 10;
+				Button1 = "Okay";
+			})
+		end
+	end)
+end
+coroutine.wrap(KKEITND_fake_script)()
+local function MPFC_fake_script() -- Rspy.LocalScript 
+	local script = Instance.new('LocalScript', Rspy)
+
+	Rspy.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://gist.githubusercontent.com/luatsuki/c75a272fb67bccc22bd1b6add92ee267/raw/56375f8536aeca0cc84b44032312efb0fa5b7fa0/Spy"))()
+	end)
+end
+coroutine.wrap(MPFC_fake_script)()
+local function YOSJ_fake_script() -- Top.Dragify 
+	local script = Instance.new('LocalScript', Top)
+
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+	    dragToggle = nil
+	    local dragSpeed = 0.50
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
+	        local Delta = input.Position - dragStart
+	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
+	    end
+	    Frame.InputBegan:Connect(function(input)
+	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+	            dragToggle = true
+	            dragStart = input.Position
+	            startPos = Frame.Position
+	            input.Changed:Connect(function()
+	                if input.UserInputState == Enum.UserInputState.End then
+	                    dragToggle = false
+	                end
+	            end)
+	        end
+	    end)
+	    Frame.InputChanged:Connect(function(input)
+	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	            dragInput = input
+	        end
+	    end)
+	    game:GetService("UserInputService").InputChanged:Connect(function(input)
+	        if input == dragInput and dragToggle then
+	            updateInput(input)
+	        end
+	    end)
+	end
+	
+	dragify(Top)
+end
+coroutine.wrap(YOSJ_fake_script)()
+local function EUCISMB_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	Close.MouseButton1Click:Connect(function()
+		G:Destroy()
+	end)
+end
+coroutine.wrap(EUCISMB_fake_script)()
