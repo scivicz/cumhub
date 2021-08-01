@@ -7,12 +7,17 @@ local G = Instance.new("ScreenGui")
 local Top = Instance.new("Frame")
 local Bar = Instance.new("Frame")
 local Main = Instance.new("Frame")
-local Container = Instance.new("Frame")
-local UIGridLayout = Instance.new("UIGridLayout")
+local TabFrame2 = Instance.new("Frame")
 local SavePlace = Instance.new("TextButton")
-local Headless = Instance.new("TextButton")
 local Rspy = Instance.new("TextButton")
-local Rspy_2 = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Container = Instance.new("Frame")
+local Tab1 = Instance.new("TextButton")
+local UIListLayout = Instance.new("UIListLayout")
+local Tab2 = Instance.new("TextButton")
+local TabFrame1 = Instance.new("Frame")
+local Goto = Instance.new("TextButton")
+local PlayerBox = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local Close = Instance.new("TextButton")
 
@@ -43,19 +48,17 @@ Main.BorderSizePixel = 0
 Main.Position = UDim2.new(-0.000428056956, 0, 0.567660451, 0)
 Main.Size = UDim2.new(0, 414, 0, 176)
 
-Container.Name = "Container"
-Container.Parent = Main
-Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Container.BackgroundTransparency = 1.000
-Container.Position = UDim2.new(0.0289855078, 0, 0.0852272734, 0)
-Container.Size = UDim2.new(0, 389, 0, 146)
-
-UIGridLayout.Parent = Container
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(0, 93, 0, 25)
+TabFrame2.Name = "TabFrame2"
+TabFrame2.Parent = Main
+TabFrame2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+TabFrame2.BackgroundTransparency = 1.000
+TabFrame2.BorderSizePixel = 0
+TabFrame2.Position = UDim2.new(0.316853166, 0, 0.0852272734, 0)
+TabFrame2.Size = UDim2.new(0, 269, 0, 146)
+TabFrame2.Visible = false
 
 SavePlace.Name = "SavePlace"
-SavePlace.Parent = Container
+SavePlace.Parent = TabFrame2
 SavePlace.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 SavePlace.BorderSizePixel = 0
 SavePlace.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
@@ -66,23 +69,11 @@ SavePlace.TextColor3 = Color3.fromRGB(255, 255, 255)
 SavePlace.TextSize = 20.000
 SavePlace.TextWrapped = true
 
-Headless.Name = "Headless"
-Headless.Parent = Container
-Headless.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-Headless.BorderSizePixel = 0
-Headless.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
-Headless.Size = UDim2.new(0, 94, 0, 25)
-Headless.Font = Enum.Font.SourceSansBold
-Headless.Text = "Headless"
-Headless.TextColor3 = Color3.fromRGB(255, 255, 255)
-Headless.TextSize = 20.000
-Headless.TextWrapped = true
-
 Rspy.Name = "Rspy"
-Rspy.Parent = Container
+Rspy.Parent = TabFrame2
 Rspy.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 Rspy.BorderSizePixel = 0
-Rspy.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
+Rspy.Position = UDim2.new(0.0386473425, 0, 0.277163774, 0)
 Rspy.Size = UDim2.new(0, 94, 0, 25)
 Rspy.Font = Enum.Font.SourceSansBold
 Rspy.Text = "Rspy"
@@ -90,17 +81,75 @@ Rspy.TextColor3 = Color3.fromRGB(255, 255, 255)
 Rspy.TextSize = 20.000
 Rspy.TextWrapped = true
 
-Rspy_2.Name = "Rspy"
-Rspy_2.Parent = Container
-Rspy_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-Rspy_2.BorderSizePixel = 0
-Rspy_2.Position = UDim2.new(0.0386473425, 0, 0.0511363633, 0)
-Rspy_2.Size = UDim2.new(0, 94, 0, 25)
-Rspy_2.Font = Enum.Font.SourceSansBold
-Rspy_2.Text = "Rspy"
-Rspy_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Rspy_2.TextSize = 20.000
-Rspy_2.TextWrapped = true
+UIGridLayout.Parent = TabFrame2
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 130, 0, 25)
+
+Container.Name = "Container"
+Container.Parent = Main
+Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Container.BackgroundTransparency = 1.000
+Container.BorderSizePixel = 0
+Container.Position = UDim2.new(0.0414908603, 0, 0.0852272734, 0)
+Container.Size = UDim2.new(0, 102, 0, 146)
+
+Tab1.Name = "Tab1"
+Tab1.Parent = Container
+Tab1.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Tab1.BorderSizePixel = 0
+Tab1.Size = UDim2.new(0, 102, 0, 25)
+Tab1.Font = Enum.Font.SourceSansBold
+Tab1.Text = "Local Player"
+Tab1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab1.TextSize = 20.000
+Tab1.TextWrapped = true
+
+UIListLayout.Parent = Container
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 2)
+
+Tab2.Name = "Tab2"
+Tab2.Parent = Container
+Tab2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Tab2.BorderSizePixel = 0
+Tab2.Size = UDim2.new(0, 102, 0, 25)
+Tab2.Font = Enum.Font.SourceSansBold
+Tab2.Text = "Game"
+Tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab2.TextSize = 20.000
+Tab2.TextWrapped = true
+
+TabFrame1.Name = "TabFrame1"
+TabFrame1.Parent = Main
+TabFrame1.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+TabFrame1.BorderSizePixel = 0
+TabFrame1.Position = UDim2.new(0.316853166, 0, 0.0852272734, 0)
+TabFrame1.Size = UDim2.new(0, 269, 0, 146)
+
+Goto.Name = "Goto"
+Goto.Parent = TabFrame1
+Goto.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Goto.BorderSizePixel = 0
+Goto.Position = UDim2.new(0.365784913, 0, 0.0716843158, 0)
+Goto.Size = UDim2.new(0, 94, 0, 25)
+Goto.Font = Enum.Font.SourceSansBold
+Goto.Text = "Goto"
+Goto.TextColor3 = Color3.fromRGB(255, 255, 255)
+Goto.TextSize = 20.000
+Goto.TextWrapped = true
+
+PlayerBox.Name = "PlayerBox"
+PlayerBox.Parent = TabFrame1
+PlayerBox.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+PlayerBox.BorderSizePixel = 0
+PlayerBox.Position = UDim2.new(0.0297397766, 0, 0.0716843307, 0)
+PlayerBox.Size = UDim2.new(0, 84, 0, 25)
+PlayerBox.Font = Enum.Font.SourceSans
+PlayerBox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+PlayerBox.PlaceholderText = "Username"
+PlayerBox.Text = ""
+PlayerBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerBox.TextSize = 14.000
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -127,7 +176,7 @@ Close.TextWrapped = true
 
 -- Scripts:
 
-local function OZDMWL_fake_script() -- Bar.Rainbow Frame 
+local function QUMVCNL_fake_script() -- Bar.Rainbow Frame 
 	local script = Instance.new('LocalScript', Bar)
 
 	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
@@ -141,80 +190,52 @@ local function OZDMWL_fake_script() -- Bar.Rainbow Frame
 	end
 	
 end
-coroutine.wrap(OZDMWL_fake_script)()
-local function PLRPTV_fake_script() -- SavePlace.LocalScript 
+coroutine.wrap(QUMVCNL_fake_script)()
+local function ZEGCW_fake_script() -- SavePlace.LocalScript 
 	local script = Instance.new('LocalScript', SavePlace)
 
 	SavePlace.MouseButton1Click:Connect(function()
 		saveinstance()
 	end)
 end
-coroutine.wrap(PLRPTV_fake_script)()
-local function SIFJY_fake_script() -- Headless.LocalScript 
-	local script = Instance.new('LocalScript', Headless)
-
-	Headless.MouseButton1Click:Connect(function()
-		local lplr = Players.LocalPlayer
-		local char = lplr.Character
-		local rig = tostring(char.Humanoid.RigType) == "Enum.HumanoidRigType.R6" and 1 or tostring(char.Humanoid.RigType) == "Enum.HumanoidRigType.R15" and 2
-	
-		local speaker = Players.LocalPlayer
-	
-		sethidden(speaker, "SimulationRadius", math.huge)
-	
-		local test = Instance.new("Model")
-		local hum  = Instance.new("Humanoid")
-		local animation = Instance.new("Model")
-		local humanoidanimation = Instance.new("Humanoid")
-		test.Parent = workspace
-		hum.Parent = test
-		animation.Parent = workspace
-		humanoidanimation.Parent = animation
-	
-		lplr.Character = test
-		wait(2)
-		char.Humanoid.Animator.Parent = humanoidanimation
-		char.Humanoid:Destroy()
-	
-		char.Head:Destroy()
-		wait(5)
-		game.Players.LocalPlayer.Character = char
-	
-		local hum2 = Instance.new("Humanoid")
-		hum2.Parent = char
-		char:FindFirstChildOfClass("Humanoid").Jump = true
-	
-		humanoidanimation.Animator.Parent = hum2
-		char.Animate.Disabled = true
-		wait()
-		char.Animate.Disabled = false
-		wait()
-	
-		if rig == 1 then
-			hum2.HipHeight = 0
-		elseif rig == 2 then
-			hum2.HipHeight = 2.19
-		end
-	end)
-end
-coroutine.wrap(SIFJY_fake_script)()
-local function DPLJQZ_fake_script() -- Rspy.LocalScript 
+coroutine.wrap(ZEGCW_fake_script)()
+local function XIJLJA_fake_script() -- Rspy.LocalScript 
 	local script = Instance.new('LocalScript', Rspy)
 
+	
+	
 	Rspy.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://gist.githubusercontent.com/luatsuki/c75a272fb67bccc22bd1b6add92ee267/raw/56375f8536aeca0cc84b44032312efb0fa5b7fa0/Spy"))()
 	end)
 end
-coroutine.wrap(DPLJQZ_fake_script)()
-local function XTBHER_fake_script() -- Rspy_2.LocalScript 
-	local script = Instance.new('LocalScript', Rspy_2)
+coroutine.wrap(XIJLJA_fake_script)()
+local function XFGRNF_fake_script() -- Tab1.LocalScript 
+	local script = Instance.new('LocalScript', Tab1)
 
-	Rspy.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://gist.githubusercontent.com/luatsuki/c75a272fb67bccc22bd1b6add92ee267/raw/56375f8536aeca0cc84b44032312efb0fa5b7fa0/Spy"))()
+	Tab1.MouseButton1Click:Connect(function()
+		TabFrame1.Visible = true
+		TabFrame2.Visible = false
 	end)
 end
-coroutine.wrap(XTBHER_fake_script)()
-local function UKZE_fake_script() -- Top.Dragify 
+coroutine.wrap(XFGRNF_fake_script)()
+local function KEKXTVC_fake_script() -- Tab2.LocalScript 
+	local script = Instance.new('LocalScript', Tab2)
+
+	Tab2.MouseButton1Click:Connect(function()
+		TabFrame1.Visible = false
+		TabFrame2.Visible = true
+	end)
+end
+coroutine.wrap(KEKXTVC_fake_script)()
+local function NMOF_fake_script() -- Goto.LocalScript 
+	local script = Instance.new('LocalScript', Goto)
+
+	Goto.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.Character:MoveTo(game.Workspace.PlayerBox.Text.HumanoidRootPart.Position)
+	end)
+end
+coroutine.wrap(NMOF_fake_script)()
+local function TMEYAV_fake_script() -- Top.Dragify 
 	local script = Instance.new('LocalScript', Top)
 
 	local UIS = game:GetService("UserInputService")
@@ -255,12 +276,12 @@ local function UKZE_fake_script() -- Top.Dragify
 	
 	dragify(Top)
 end
-coroutine.wrap(UKZE_fake_script)()
-local function SFWQLMZ_fake_script() -- Close.LocalScript 
+coroutine.wrap(TMEYAV_fake_script)()
+local function MAVEDQ_fake_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	Close.MouseButton1Click:Connect(function()
 		G:Destroy()
 	end)
 end
-coroutine.wrap(SFWQLMZ_fake_script)()
+coroutine.wrap(MAVEDQ_fake_script)()
