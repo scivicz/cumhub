@@ -24,7 +24,7 @@ local Close = Instance.new("TextButton")
 --Properties:
 
 G.Name = "G"
-G.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+G.Parent = game.CoreGui
 G.Enabled = true
 G.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
